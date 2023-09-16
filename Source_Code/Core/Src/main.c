@@ -76,11 +76,11 @@ void display7SEG(int counter) {
 	else if(counter == 2) {
 		HAL_GPIO_WritePin(LED_7SEG_a_GPIO_Port, LED_7SEG_a_Pin, RESET);
 		HAL_GPIO_WritePin(LED_7SEG_b_GPIO_Port, LED_7SEG_b_Pin, RESET);
-		HAL_GPIO_WritePin(LED_7SEG_c_GPIO_Port, LED_7SEG_c_Pin, RESET);
+		HAL_GPIO_WritePin(LED_7SEG_c_GPIO_Port, LED_7SEG_c_Pin, SET);
 		HAL_GPIO_WritePin(LED_7SEG_d_GPIO_Port, LED_7SEG_d_Pin, RESET);
 		HAL_GPIO_WritePin(LED_7SEG_e_GPIO_Port, LED_7SEG_e_Pin, RESET);
-		HAL_GPIO_WritePin(LED_7SEG_f_GPIO_Port, LED_7SEG_f_Pin, RESET);
-		HAL_GPIO_WritePin(LED_7SEG_g_GPIO_Port, LED_7SEG_g_Pin, SET);
+		HAL_GPIO_WritePin(LED_7SEG_f_GPIO_Port, LED_7SEG_f_Pin, SET);
+		HAL_GPIO_WritePin(LED_7SEG_g_GPIO_Port, LED_7SEG_g_Pin, RESET);
 	}
 
 	else if(counter == 3) {
