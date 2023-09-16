@@ -93,25 +93,37 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   int state = 0;
-  int counter = 2;
+  int counter = 5;
   while (1)
   {
 	  if(state == 0) {
 		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
 		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
+		  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
 		  counter--;
 		  if(counter <= 0) {
 			  state = 1;
+			  counter = 3;
+		  }
+	  }
+	  else if(state == 1) {
+		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
+		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
+		  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
+		  counter--;
+		  if(counter <= 0) {
+			  state = 2;
 			  counter = 2;
 		  }
 	  }
 	  else {
 		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
-		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
+		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
+		  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, RESET);
 		  counter--;
 		  if(counter <= 0) {
 			  state = 0;
-			  counter = 2;
+			  counter = 5;
 		  }
 	  }
 	  HAL_Delay(1000);
