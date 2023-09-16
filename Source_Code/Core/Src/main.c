@@ -92,15 +92,12 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int counter = 0;
   while (1)
   {
-	  HAL_GPIO_TogglePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin);
-	  HAL_GPIO_TogglePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin);
-	  HAL_GPIO_TogglePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin);
-	  HAL_GPIO_TogglePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin);
-	  HAL_GPIO_TogglePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin);
-	  HAL_GPIO_TogglePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin);
-	  HAL_Delay(3000);
+	  if(counter >= 10) counter = 0;
+	  display7SEG(counter++);
+	  HAL_Delay(1000);
 
 
     /* USER CODE END WHILE */
