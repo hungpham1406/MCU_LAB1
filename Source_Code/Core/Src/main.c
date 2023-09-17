@@ -92,8 +92,61 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int counter = 1;
   while (1)
   {
+	  HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_3_GPIO_Port, LED_RED_3_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_4_GPIO_Port, LED_RED_4_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_5_GPIO_Port, LED_RED_5_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_6_GPIO_Port, LED_RED_6_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_7_GPIO_Port, LED_RED_7_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_8_GPIO_Port, LED_RED_8_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_9_GPIO_Port, LED_RED_9_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_10_GPIO_Port, LED_RED_10_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_11_GPIO_Port, LED_RED_11_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_12_GPIO_Port, LED_RED_12_Pin, SET);
+
+	  if(counter == 1) {
+		  HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, RESET);
+	  }
+	  else if(counter == 2) {
+		  HAL_GPIO_WritePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin, RESET);
+	  }
+	  else if(counter == 3) {
+		  HAL_GPIO_WritePin(LED_RED_3_GPIO_Port, LED_RED_3_Pin, RESET);
+	  }
+	  else if(counter == 4) {
+		  HAL_GPIO_WritePin(LED_RED_4_GPIO_Port, LED_RED_4_Pin, RESET);
+	  }
+	  else if(counter == 5) {
+		  HAL_GPIO_WritePin(LED_RED_5_GPIO_Port, LED_RED_5_Pin, RESET);
+	  }
+	  else if(counter == 6) {
+		  HAL_GPIO_WritePin(LED_RED_6_GPIO_Port, LED_RED_6_Pin, RESET);
+	  }
+	  else if(counter == 7) {
+		  HAL_GPIO_WritePin(LED_RED_7_GPIO_Port, LED_RED_7_Pin, RESET);
+	  }
+	  else if(counter == 8) {
+		  HAL_GPIO_WritePin(LED_RED_8_GPIO_Port, LED_RED_8_Pin, RESET);
+	  }
+	  else if(counter == 9) {
+		  HAL_GPIO_WritePin(LED_RED_9_GPIO_Port, LED_RED_9_Pin, RESET);
+	  }
+	  else if(counter == 10) {
+		  HAL_GPIO_WritePin(LED_RED_10_GPIO_Port, LED_RED_10_Pin, RESET);
+	  }
+	  else if(counter == 11) {
+		  HAL_GPIO_WritePin(LED_RED_11_GPIO_Port, LED_RED_11_Pin, RESET);
+	  }
+	  else if(counter == 12) {
+		  HAL_GPIO_WritePin(LED_RED_12_GPIO_Port, LED_RED_12_Pin, RESET);
+		  counter = 0;
+	  }
+	  counter++;
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
