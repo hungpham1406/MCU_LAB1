@@ -188,10 +188,6 @@ int main(void)
   int counter = 0;
   while (1)
   {
-	  if(counter >= 10) counter = 0;
-	  display7SEG(counter++);
-	  HAL_Delay(1000);
-
 
     /* USER CODE END WHILE */
 
