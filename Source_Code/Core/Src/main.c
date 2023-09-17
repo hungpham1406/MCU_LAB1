@@ -55,7 +55,19 @@ static void MX_GPIO_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void clearAllClock() {
-
+	  HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_3_GPIO_Port, LED_RED_3_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_4_GPIO_Port, LED_RED_4_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_5_GPIO_Port, LED_RED_5_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_6_GPIO_Port, LED_RED_6_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_7_GPIO_Port, LED_RED_7_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_8_GPIO_Port, LED_RED_8_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_9_GPIO_Port, LED_RED_9_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_10_GPIO_Port, LED_RED_10_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_11_GPIO_Port, LED_RED_11_Pin, SET);
+	  HAL_GPIO_WritePin(LED_RED_12_GPIO_Port, LED_RED_12_Pin, SET);
+	  return;
 }
 /* USER CODE END 0 */
 
@@ -94,23 +106,12 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int counter = 1;
+  int counter = 0;
   while (1)
   {
-	  HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, SET);
-	  HAL_GPIO_WritePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin, SET);
-	  HAL_GPIO_WritePin(LED_RED_3_GPIO_Port, LED_RED_3_Pin, SET);
-	  HAL_GPIO_WritePin(LED_RED_4_GPIO_Port, LED_RED_4_Pin, SET);
-	  HAL_GPIO_WritePin(LED_RED_5_GPIO_Port, LED_RED_5_Pin, SET);
-	  HAL_GPIO_WritePin(LED_RED_6_GPIO_Port, LED_RED_6_Pin, SET);
-	  HAL_GPIO_WritePin(LED_RED_7_GPIO_Port, LED_RED_7_Pin, SET);
-	  HAL_GPIO_WritePin(LED_RED_8_GPIO_Port, LED_RED_8_Pin, SET);
-	  HAL_GPIO_WritePin(LED_RED_9_GPIO_Port, LED_RED_9_Pin, SET);
-	  HAL_GPIO_WritePin(LED_RED_10_GPIO_Port, LED_RED_10_Pin, SET);
-	  HAL_GPIO_WritePin(LED_RED_11_GPIO_Port, LED_RED_11_Pin, SET);
-	  HAL_GPIO_WritePin(LED_RED_12_GPIO_Port, LED_RED_12_Pin, SET);
-
-
+	  if(counter == 1) {
+		  clearAllClock();
+	  }
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
