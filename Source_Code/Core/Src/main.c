@@ -110,6 +110,10 @@ void setNumberOnClock(int num) {
 	}
 	return;
 }
+
+void clearNumberOnClock(int num) {
+
+}
 /* USER CODE END 0 */
 
 /**
@@ -151,8 +155,7 @@ int main(void)
   while (1)
   {
 	  clearAllClock();
-	  if(counter > 12) counter = 1;
-	  setNumberOnClock(counter++);
+
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
