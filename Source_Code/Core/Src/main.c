@@ -69,6 +69,10 @@ void clearAllClock() {
 	  HAL_GPIO_WritePin(LED_RED_12_GPIO_Port, LED_RED_12_Pin, SET);
 	  return;
 }
+
+void setNumberOnClock(int num) {
+
+}
 /* USER CODE END 0 */
 
 /**
@@ -109,9 +113,7 @@ int main(void)
   int counter = 0;
   while (1)
   {
-	  if(counter == 1) {
-		  clearAllClock();
-	  }
+
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
