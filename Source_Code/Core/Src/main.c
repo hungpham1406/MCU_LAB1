@@ -71,7 +71,6 @@ void clearAllClock() {
 }
 
 void setNumberOnClock(int num) {
-	clearAllClock();
 	if(num == 1) {
 		HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, RESET);
 	}
