@@ -146,6 +146,7 @@ int main(void)
 		  counter = 0;
 	  }
 	  counter++;
+	  if(counter > 12) counter = 1;
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
