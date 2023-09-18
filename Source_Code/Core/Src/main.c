@@ -190,17 +190,7 @@ int main(void)
   int counter2 = 13;
   while (1)
   {
-	  if(counter == 0) clearAllClock();
-	  if(counter <= 12) {
-		  setNumberOnClock(counter++);
-	  }
-	  else {
-		  clearNumberOnClock(counter2--);
-		  if(counter2 == 0) {
-			  counter = 0;
-			  counter2 = 13;
-		  }
-	  }
+
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
