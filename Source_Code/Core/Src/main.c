@@ -193,8 +193,8 @@ int main(void)
   {
 	  clearAllClock();
 
-	  if(minute == 60) hour++;
 	  if(second == 60) minute++;
+	  if(minute == 60) hour++;
 	  if(hour > 12) {
 		  hour = 1;
 	  }

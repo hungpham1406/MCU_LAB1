@@ -352,20 +352,20 @@ int main(void)
 	  clearAllClock();
  80002fa:	f7ff ff27 	bl	800014c <clearAllClock>
 
-	  if(minute == 60) hour++;
- 80002fe:	68bb      	ldr	r3, [r7, #8]
+	  if(second == 60) minute++;
+ 80002fe:	687b      	ldr	r3, [r7, #4]
  8000300:	2b3c      	cmp	r3, #60	; 0x3c
  8000302:	d102      	bne.n	800030a <main+0x2e>
- 8000304:	68fb      	ldr	r3, [r7, #12]
+ 8000304:	68bb      	ldr	r3, [r7, #8]
  8000306:	3301      	adds	r3, #1
- 8000308:	60fb      	str	r3, [r7, #12]
-	  if(second == 60) minute++;
- 800030a:	687b      	ldr	r3, [r7, #4]
+ 8000308:	60bb      	str	r3, [r7, #8]
+	  if(minute == 60) hour++;
+ 800030a:	68bb      	ldr	r3, [r7, #8]
  800030c:	2b3c      	cmp	r3, #60	; 0x3c
  800030e:	d102      	bne.n	8000316 <main+0x3a>
- 8000310:	68bb      	ldr	r3, [r7, #8]
+ 8000310:	68fb      	ldr	r3, [r7, #12]
  8000312:	3301      	adds	r3, #1
- 8000314:	60bb      	str	r3, [r7, #8]
+ 8000314:	60fb      	str	r3, [r7, #12]
 	  if(hour > 12) {
  8000316:	68fb      	ldr	r3, [r7, #12]
  8000318:	2b0c      	cmp	r3, #12
