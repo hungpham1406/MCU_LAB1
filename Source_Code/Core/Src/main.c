@@ -195,7 +195,11 @@ int main(void)
   setNumberOnClock(12);
   while (1)
   {
-	  if(counter > 60) counter = 1;
+	  if(counter > 60) {
+		  counter = 1;
+		  counter_minute++;
+	  }
+	  if(counter_minute > 60) counter_minute = 1;
 
 	  if(counter % 5 == 0 && counter != 0) {
 		  if(second != minute && second != hour) {
@@ -204,10 +208,21 @@ int main(void)
 		  second++;
 		  if(second > 12) {
 			  second = 1;
-			  counter_minute++;
 		  }
 		  setNumberOnClock(second);
 	  }
+
+	  if(counter_minute % 5 == 0 && counter_minute != 0) {
+		  if(minute != hour) {
+			  clearNumberOnClock(minute);
+		  }
+		  minute++;
+		  if(minute > 12) {
+			  minute = 1;
+		  }
+		  setNumberOnClock(minute);
+	  }
+
 	  counter++;
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
