@@ -190,10 +190,9 @@ int main(void)
   int minute = 12;
   int second = 12;
   int counter = 0;
+  int counter_minute = 0;
   clearAllClock();
-  setNumberOnClock(hour);
-  setNumberOnClock(minute);
-  setNumberOnClock(second);
+  setNumberOnClock(12);
   while (1)
   {
 	  if(counter > 60) counter = 1;
@@ -203,7 +202,10 @@ int main(void)
 			  clearNumberOnClock(second);
 		  }
 		  second++;
-		  if(second > 12) second = 1;
+		  if(second > 12) {
+			  second = 1;
+			  counter_minute++;
+		  }
 		  setNumberOnClock(second);
 	  }
 	  counter++;
