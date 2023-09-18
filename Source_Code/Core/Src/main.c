@@ -187,23 +187,27 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   int hour = 12;
-  int minute = 60;
-  int second = 60;
-  clearAllClock();
+  int minute = 0;
+  int second = 0;
   while (1)
   {
-	  if(hour > 12) hour = 1;
+	  clearAllClock();
+
+	  if(minute == 60) hour++;
+	  if(second == 60) minute++;
+	  if(hour > 12) {
+		  hour = 1;
+	  }
 	  if(minute > 60) {
 		  minute = 0;
-		  hour++;
 	  }
 	  if(second > 60) {
 		  second = 0;
-		  minute++;
 	  }
 	  setNumberOnClock(hour);
 	  setNumberOnClock(minute/5);
 	  setNumberOnClock(second/5);
+
 
 	  second++;
 	  HAL_Delay(25);
