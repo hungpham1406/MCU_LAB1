@@ -144,7 +144,7 @@ void clearNumberOnClock(int num) {
 	else if(num == 11) {
 		HAL_GPIO_WritePin(LED_RED_11_GPIO_Port, LED_RED_11_Pin, SET);
 	}
-	else if(num == 12) {
+	else if(num == 12 || num == 0) {
 		HAL_GPIO_WritePin(LED_RED_12_GPIO_Port, LED_RED_12_Pin, SET);
 	}
 	return;
