@@ -192,11 +192,11 @@ int main(void)
 	  display7SEG(counter++);
 	  HAL_Delay(1000);
 
-
+  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  }
+
   /* USER CODE END 3 */
 }
 
