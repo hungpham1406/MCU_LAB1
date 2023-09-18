@@ -187,43 +187,25 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   int hour = 12;
-  int minute = 12;
-  int second = 12;
-  int counter = 0;
-  int counter_minute = 0;
+  int minute = 60;
+  int second = 60;
   clearAllClock();
-  setNumberOnClock(12);
   while (1)
   {
-	  if(counter > 60) {
-		  counter = 1;
-		  counter_minute++;
+	  if(hour > 12) hour = 1;
+	  if(minute > 60) {
+		  minute = 0;
+		  hour++;
 	  }
-	  if(counter_minute > 60) counter_minute = 1;
-
-	  if(counter % 5 == 0 && counter != 0) {
-		  if(second != minute && second != hour) {
-			  clearNumberOnClock(second);
-		  }
-		  second++;
-		  if(second > 12) {
-			  second = 1;
-		  }
-		  setNumberOnClock(second);
-	  }
-
-	  if(counter_minute % 5 == 0 && counter_minute != 0) {
-		  if(minute != hour) {
-			  clearNumberOnClock(minute);
-		  }
+	  if(second > 60) {
+		  second = 0;
 		  minute++;
-		  if(minute > 12) {
-			  minute = 1;
-		  }
-		  setNumberOnClock(minute);
 	  }
+	  setNumberOnClock(hour);
+	  setNumberOnClock(minute/5);
+	  setNumberOnClock(second/5);
 
-	  counter++;
+	  second++;
 	  HAL_Delay(25);
     /* USER CODE END WHILE */
 
