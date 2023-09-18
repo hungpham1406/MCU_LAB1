@@ -186,11 +186,27 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int hour = 12;
+  int minute = 12;
+  int second = 12;
   int counter = 0;
-  int counter2 = 13;
+  clearAllClock();
+  setNumberOnClock(hour);
+  setNumberOnClock(minute);
+  setNumberOnClock(second);
   while (1)
   {
+	  if(counter > 60) counter = 1;
 
+	  if(counter % 5 == 0 && counter != 0) {
+		  if(second != minute && second != hour) {
+			  clearNumberOnClock(second);
+		  }
+		  second++;
+		  if(second > 12) second = 1;
+		  setNumberOnClock(second);
+	  }
+	  counter++;
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
